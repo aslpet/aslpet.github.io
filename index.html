@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5027241068 Smart Farming Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .sensor-card { 
+            transition: transform 0.3s ease; 
+            position: relative;
+        }
+        .sensor-card:hover { 
+            transform: translateY(-3px); 
+        }
+        .color-bar { 
+            position: absolute; 
+            left: 0; 
+            top: 0; 
+            bottom: 0; 
+            width: 4px; 
+        }
+        .bg-primary-custom { background: #007bff; }
+        .bg-success-custom { background: #28a745; }
+        .bg-info-custom { background: #17a2b8; }
+        .bg-warning-custom { background: #ffc107; }
+        .bg-danger-custom { background: #dc3545; }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container-fluid p-4">
+        <h2 class="mb-4 text-center fw-bold">Smart Farming Dashboard</h2>
+        
+        <div class="row g-3">
+            <!-- Kelembaban (RH) -->
+            <div class="col-xl-3 col-md-4 col-sm-6">
+                <div class="card border-0 shadow-sm sensor-card">
+                    <div class="color-bar bg-success-custom"></div>
+                    <div class="card-body ps-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <small class="text-uppercase text-muted fw-medium">Kelembaban (RH)</small>
+                            <span class="badge bg-success">Normal</span>
+                        </div>
+                        <div class="h2 fw-bold mb-3">54 <small class="text-muted">%</small></div>
+                        <div class="progress mb-2" style="height: 6px;">
+                            <div class="progress-bar bg-success" style="width: 54%"></div>
+                        </div>
+                        <small class="text-muted">Optimal: 50-70%</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- TDS -->
+            <div class="col-xl-3 col-md-4 col-sm-6">
+                <div class="card border-0 shadow-sm sensor-card">
+                    <div class="color-bar bg-primary-custom"></div>
+                    <div class="card-body ps-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <small class="text-uppercase text-muted fw-medium">TDS</small>
+                            <span class="badge bg-success">Normal</span>
+                        </div>
+                        <div class="h2 fw-bold mb-3">400 <small class="text-muted">ppm</small></div>
+                        <div class="progress mb-2" style="height: 6px;">
+                            <div class="progress-bar bg-primary" style="width: 67%"></div>
+                        </div>
+                        <small class="text-muted">Target: 300-600 ppm</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Kekeruhan (Turbid) -->
+            <div class="col-xl-3 col-md-4 col-sm-6">
+                <div class="card border-0 shadow-sm sensor-card">
+                    <div class="color-bar bg-warning-custom"></div>
+                    <div class="card-body ps-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <small class="text-uppercase text-muted fw-medium">Kekeruhan (Turbid)</small>
+                            <span class="badge bg-warning text-dark">Tinggi</span>
+                        </div>
+                        <div class="h2 fw-bold mb-3">18 <small class="text-muted">NTU</small></div>
+                        <div class="progress mb-2" style="height: 6px;">
+                            <div class="progress-bar bg-warning" style="width: 72%"></div>
+                        </div>
+                        <small class="text-muted">Max: 25 NTU</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Temperatur Air -->
+            <div class="col-xl-3 col-md-4 col-sm-6">
+                <div class="card border-0 shadow-sm sensor-card">
+                    <div class="color-bar bg-success-custom"></div>
+                    <div class="card-body ps-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <small class="text-uppercase text-muted fw-medium">Temperatur Air</small>
+                            <span class="badge bg-success">Normal</span>
+                        </div>
+                        <div class="h2 fw-bold mb-3">25 <small class="text-muted">°C</small></div>
+                        <div class="progress mb-2" style="height: 6px;">
+                            <div class="progress-bar bg-success" style="width: 63%"></div>
+                        </div>
+                        <small class="text-muted">Ideal: 22-28°C</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Aliran Air -->
+            <div class="col-xl-3 col-md-4 col-sm-6">
+                <div class="card border-0 shadow-sm sensor-card">
+                    <div class="color-bar bg-danger-custom"></div>
+                    <div class="card-body ps-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <small class="text-uppercase text-muted fw-medium">Aliran Air</small>
+                            <span class="badge bg-danger">Kritis</span>
+                        </div>
+                        <div class="h2 fw-bold mb-3">34 <small class="text-muted">L/min</small></div>
+                        <div class="progress mb-2" style="height: 6px;">
+                            <div class="progress-bar bg-danger" style="width: 85%"></div>
+                        </div>
+                        <small class="text-muted">Max: 40 L/min</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Oksigen Terlarut -->
+            <div class="col-xl-3 col-md-4 col-sm-6">
+                <div class="card border-0 shadow-sm sensor-card">
+                    <div class="color-bar bg-info-custom"></div>
+                    <div class="card-body ps-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <small class="text-uppercase text-muted fw-medium">Oksigen Terlarut</small>
+                            <span class="badge bg-warning text-dark">Rendah</span>
+                        </div>
+                        <div class="h2 fw-bold mb-3">10 <small class="text-muted">ppm</small></div>
+                        <div class="progress mb-2" style="height: 6px;">
+                            <div class="progress-bar bg-info" style="width: 50%"></div>
+                        </div>
+                        <small class="text-muted">Min: 12 ppm</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Intensitas Cahaya -->
+            <div class="col-xl-3 col-md-4 col-sm-6">
+                <div class="card border-0 shadow-sm sensor-card">
+                    <div class="color-bar bg-warning-custom"></div>
+                    <div class="card-body ps-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <small class="text-uppercase text-muted fw-medium">Intensitas Cahaya</small>
+                            <span class="badge bg-warning text-dark">Rendah</span>
+                        </div>
+                        <div class="h2 fw-bold mb-3">100 <small class="text-muted">Lux</small></div>
+                        <div class="progress mb-2" style="height: 6px;">
+                            <div class="progress-bar bg-warning" style="width: 25%"></div>
+                        </div>
+                        <small class="text-muted">Optimal: 400+ Lux</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Temperatur Udara -->
+            <div class="col-xl-3 col-md-4 col-sm-6">
+                <div class="card border-0 shadow-sm sensor-card">
+                    <div class="color-bar bg-danger-custom"></div>
+                    <div class="card-body ps-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <small class="text-uppercase text-muted fw-medium">Temperatur Udara</small>
+                            <span class="badge bg-danger">Tinggi</span>
+                        </div>
+                        <div class="h2 fw-bold mb-3">34 <small class="text-muted">°C</small></div>
+                        <div class="progress mb-2" style="height: 6px;">
+                            <div class="progress-bar bg-danger" style="width: 85%"></div>
+                        </div>
+                        <small class="text-muted">Max: 35°C</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- EC -->
+            <div class="col-xl-3 col-md-4 col-sm-6">
+                <div class="card border-0 shadow-sm sensor-card">
+                    <div class="color-bar bg-success-custom"></div>
+                    <div class="card-body ps-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <small class="text-uppercase text-muted fw-medium">EC</small>
+                            <span class="badge bg-success">Normal</span>
+                        </div>
+                        <div class="h2 fw-bold mb-3">2 <small class="text-muted">mS/cm</small></div>
+                        <div class="progress mb-2" style="height: 6px;">
+                            <div class="progress-bar bg-success" style="width: 67%"></div>
+                        </div>
+                        <small class="text-muted">Target: 1.5-3.0 mS/cm</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PH -->
+            <div class="col-xl-3 col-md-4 col-sm-6">
+                <div class="card border-0 shadow-sm sensor-card">
+                    <div class="color-bar bg-success-custom"></div>
+                    <div class="card-body ps-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <small class="text-uppercase text-muted fw-medium">PH</small>
+                            <span class="badge bg-success">Normal</span>
+                        </div>
+                        <div class="h2 fw-bold mb-3">7.1</div>
+                        <div class="progress mb-2" style="height: 6px;">
+                            <div class="progress-bar bg-success" style="width: 71%"></div>
+                        </div>
+                        <small class="text-muted">Ideal: 6.0-8.0</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
